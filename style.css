@@ -1,0 +1,191 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    
+    position: relative;
+     background: #ADA996;  
+    background: -webkit-linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996);  
+    background: linear-gradient(to right, #EAEAEA, #DBDBDB, #F2F2F2, #ADA996); 
+    ;
+}
+
+
+
+.game{
+    width: 80%;
+    margin: 0 auto;
+    
+}
+
+
+
+
+.deck-container{
+    width: 1200px; 
+    height: 500px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    
+   
+}
+
+.card-container{
+   width: 16%;
+   height: 35%;
+   position: relative;
+   transform: scale(1);
+   transform-style: preserve-3d;
+   transition: transform .5s;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 42%;
+    margin-top: .3em;
+    border: 1px solid #000;
+    width: 15%;
+    padding: 5px 0;
+}
+
+
+.stats{
+    margin-left: 12%;
+}
+
+
+
+.card-front,
+.card-back{
+    border: 1px solid black;
+    cursor: pointer;
+    width: 150px;
+    margin: 1.2em;
+    transform: scale(1);
+    position: absolute;
+    transform-style: preserve-3d;
+    box-shadow: rgba(136, 136, 136, 0.425) 0px .5em 1em; 
+   
+}
+
+.card-back{
+    width: 150px;
+    
+    backface-visibility: hidden;
+}
+
+.card-container:active{
+    transform: scale(.95);
+   
+    transition: transform .2s;
+    
+}
+
+/* "flip" classen skapas i javascript */
+.card-container.flip {
+    transform: rotateY(180deg);
+}
+
+.btn-music{
+    padding: 1.5em 2em;
+    border-radius: 2px;
+    font-size: bold;
+    cursor: pointer;
+    transform: scale(1);
+    margin-left: 3em;
+}
+
+.btn-music:active{
+    transform: scale(.95);
+    transition: transform .2s;
+}
+
+.btn-start{
+    padding: 1.5em 2em;
+    border-radius: 2px;
+    /* margin: 0 auto; */
+    /* margin: 17em 0 0 51.5em; */
+    margin: 15% 0 0 40%;
+    font-size: bold;
+    cursor: pointer;
+    transform: scale(1);
+}
+.btn-start:active{
+    transform: scale(.95);
+   
+    transition: transform .2s;
+}
+.player-turn-display, h3{
+    font-size: 1.7rem;
+    line-height: 1.7em;
+}
+
+.player-turn-display{
+    border-bottom: 2px solid black;
+    
+}
+
+
+
+
+.players{
+    margin-left: 1em;
+    display: flex;
+    justify-content: space-between; 
+    font-weight: bold;
+    width: 80%; 
+    margin-top: 2em;
+}
+
+.player-title {
+    border: 1px solid black;
+    padding: .1em 1em;
+    line-height: 2em;
+    font-size: 1.5rem;
+    background-color: #d6d6d6;
+    color: #000;
+    letter-spacing: .02em;
+}
+
+/* Endast för de som sitter med mindre skärmar */
+@media only screen and (max-width: 1600px){
+    
+    
+.btn-start{
+    display: flex;
+    padding: 20px 25px;
+    border-radius: 2px;
+    /* margin: 0 auto; */
+    /* margin: 17em 0 0 51.5em; */
+    margin: 20% 0 0 45%;
+    font-size: bold;
+    cursor: pointer;
+    transform: scale(1);
+}
+
+
+body h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 30%;
+    border: 1px solid #000;
+    width: 40%;
+    padding: 10px 0;
+}
+
+.players{
+    display: flex;
+    justify-content: space-between; 
+    font-weight: bold;
+    width: 90%; 
+    
+}
+
+}

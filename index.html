@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Simpsons Memory Game</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>Memory Game</h1>
+
+    <main class="game">
+      <div class="stats">
+        <div class="players">
+          <p class="player-title">
+            Player 1 Score:<span class="player-one-score"></span>
+          </p>
+          <h3 class="player-turn-display">
+            <label class="player-turn-lbl"></label>'s turn
+          </h3>
+          <p class="player-title">
+            Player 2 Score: <span class="player-two-score"></span>
+          </p>
+          <!-- score: 2-->
+        </div>
+      </div>
+
+      <!-- Kan säkert göras om i js om man vill. -->
+      <audio
+        class="theme-song"
+        src="./audio/Y2Mate.is - The Simpsons Main Title Theme-Fttst9dG6Ko-160k-1655507597330.mp3"></audio>
+      <audio
+        class="card-flip"
+        src="./audio/240776__f4ngy__card-flip.wav"></audio>
+
+      <audio
+        class="audio-correct"
+        src="./audio/Y2Mate.is - Check mark sound effect-AbiiZErJFC4-160k-1655212547023.mp3"></audio>
+      <audio
+        class="audio-wrong"
+        src="./audio/Y2Mate.is - Homer - D´OH-H22t-tiWiLw-128k-1659745984707.mp3"></audio>
+
+      <section class="deck-container"></section>
+      <button class="btn-start">Restart</button>
+      <button class="btn-music">Music</button>
+    </main>
+
+    <!-- <button class="btn-start">Restart</button> -->
+  </body>
+</html>
