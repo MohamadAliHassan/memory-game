@@ -143,19 +143,18 @@ let cardLock = false;
 // 1.
 // Card flip
 function flipCard() {
-  if (cardLock) return; //Avslutar funktionen och "låser" då möjligheten att flippa fler kort om man redan valt 2st kort
+  if (cardLock) return; 
   if (this === firstCard) return;
 
-  this.classList.add("flip"); //Genererar en ny "flip" class till htmlen i card-container varje gång man trycker på ett kort. "this" = det man har klickat på
+  this.classList.add("flip");
 
   if (!hasFlippedCard) {
-    console.log(!hasFlippedCard); //First card. "Om ett kort inte har vänts så är den false, och sedan om den vänds så blir den true"
-    //bredvid .card-container får man ett till class namn som heter ".flip"
+    console.log(!hasFlippedCard); 
     hasFlippedCard = true;
     firstCard = this;
     console.log(hasFlippedCard, this);
 
-    // Går vidare till else statement eftersom hasFlippedCard är true efter man vänt på ett kort
+   
   } else {
     //second card
     hasFlippedCard = false;
@@ -173,7 +172,7 @@ function flipCard() {
 // 2.
 // Kollar ifall korten matchar
 function matchedCards() {
-  //Om kort ett och två matchar och har samma "data.name" så kommer addEventListener sluta gälla för dem korten. Alltså de kommer inte vändas tillbaka.
+  
   if (firstCard.dataset.name === secondCard.dataset.name) {
     console.log(firstCard);
     firstCard.removeEventListener("click", flipCard);
@@ -181,7 +180,7 @@ function matchedCards() {
     correctAudio.play();
     scoreCounter();
   } else {
-    cardLock = true; // "true" = Alla andra kort förutom dem två valda korten blir "låsta" Om korten INTE stämmer med varandra så kommer "flipCard" funktionen sluta gälla och ".flip" classen kommer tas bort från korten
+    cardLock = true; 
 
     setTimeout(() => {
       firstCard.classList.remove("flip");
@@ -222,19 +221,19 @@ function scoreCounter() {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 function resetCards() {
-  //tar bort "låsningen" om
-  firstCard = null; // första valalternativet blir null
-  secondCard = null; // andra valalternativet blir null
-  hasFlippedCard = false; // resettar tillbaka korten eftersom inget kort längre är flippat
-  cardLock = false; // Gör låsningen false, alltså tar bort låset
+  
+  firstCard = null; 
+  secondCard = null; 
+  hasFlippedCard = false; 
+  cardLock = false; 
 }
 
 const cards = document.querySelectorAll(".card-container");
 
-//Lägger till en event listener på alla kort som lyssnar efter funktionen flipCard
+
 cards.forEach((card) => card.addEventListener("click", flipCard));
 
-//Triggar igång en page refresher när man trycker på restart knappen.
+
 document.querySelector(".btn-start").addEventListener("click", function () {
   window.location.reload();
   return false;
